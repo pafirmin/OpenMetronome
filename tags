@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+App	src/App.js	/^const App = () => {$/;"	F
+CHANGE_TEMPO	src/actions/types.js	/^export const CHANGE_TEMPO = "CHANGE_TEMPO";$/;"	E
+Metronome	src/components/Metronome.js	/^const Metronome = () => {$/;"	F
+Pendulum	src/components/Metronome.js	/^const Pendulum = styled.div`$/;"	S
+Wrapper	src/components/Metronome.js	/^const Wrapper = styled.div`$/;"	S
+action	src/reducers/metronomeReducer.test.js	/^    const action = {$/;"	O
+actions	src/actions/metronomeActions.test.js	/^import * as actions from '.\/metronomeActions'$/;"	I
+animation	src/components/Metronome.js	/^const animation = (props) =>$/;"	F
+changeTempo	src/actions/metronomeActions.js	/^export const changeTempo = (tempo) => {$/;"	E
+expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = {type: CHANGE_TEMPO, payload: 80}$/;"	O
+initialState	src/reducers/MetronomeReducer.js	/^const initialState = {$/;"	O
+initialState	src/reducers/metronomeReducer.js	/^const initialState = {$/;"	O
+metronomeReducer	src/reducers/MetronomeReducer.js	/^const metronomeReducer = (state = initialState, action) => {$/;"	F
+metronomeReducer	src/reducers/metronomeReducer.js	/^const metronomeReducer = (state = initialState, action) => {$/;"	F
+payload	src/actions/metronomeActions.js	/^    payload: tempo,$/;"	P
+payload	src/reducers/MetronomeReducer.js	/^  const { type, payload } = action;$/;"	V
+payload	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
+payload	src/reducers/metronomeReducer.test.js	/^      payload: 80$/;"	P
+tempo	src/components/Metronome.js	/^  const tempo = useSelector((state) => state.tempo);$/;"	F
+tempo	src/reducers/MetronomeReducer.js	/^  tempo: 120,$/;"	P
+tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P
+type	src/actions/metronomeActions.js	/^    type: CHANGE_TEMPO,$/;"	P
+type	src/reducers/MetronomeReducer.js	/^  const { type, payload } = action;$/;"	V
+type	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
+type	src/reducers/metronomeReducer.test.js	/^      type: CHANGE_TEMPO,$/;"	P
