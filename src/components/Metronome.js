@@ -57,55 +57,39 @@ const Pendulum = styled.div`
 
 const Metronome = () => {
   const { tempo, metre, isPlaying } = useSelector((state) => state);
-  const pulseRef = useRef(new UIfx(cowbell));
-  const newBarRef = useRef(new UIfx(cowbellBar));
-  const stopAudio = useRef(() => {});
-  const [beatCount, setBeatCount] = useState(1);
+  const audioCtx = useRef(new AudioContext());
+  const pulse = useRef(null);
 
-  // const playTick = () => {
-  //   if (playTick.tick % metre === 1) {
-  //     newBarRef.current.play();
-  //   } else {
-  //     pulseRef.current.play();
-  //   }
-  //   playTick.tick++;
-  // };
-  // playTick.tick = 1;
+  const startPulse = useCallback(() => {
+    const interval = (60 / tempo) * 1000;
 
-  const startPulse = () => {
-    stopAudio.current();
-    const interval = ((60 / tempo) * 1000) / 2;
-
-    const pulse = setInterval(() => pulseRef.current.play(), interval);
-
-    stopAudio.current = () => clearInterval(pulse);
-  };
+    setInterval(() => playTick(), interval);
+  }, [tempo]);
 
   useEffect(() => {
-    setBeatCount(1);
+    const getFile = async () => {
+      const res = await fetch(cowbell);
+      const arrayBuffer = await res.arrayBuffer();
+      pulse.current = await audioCtx.current.decodeAudioData(arrayBuffer);
 
-    if (isPlaying) {
-      startPulse();
-    } else {
-      stopAudio.current();
-    }
-  }, [isPlaying, tempo]);
+      console.log(pulse.current);
+    };
+    getFile();
+  }, []);
 
-  useEffect(() => {
-    if (isPlaying) {
-      if (beatCount % metre === 1) {
-        newBarRef.current.play();
-      } else {
-        pulseRef.current.play();
-      }
-    }
-  }, [isPlaying, beatCount, metre]);
+  function playTick() {
+    const source = audioCtx.current.createBufferSource();
+    source.buffer = pulse.current;
+    source.connect(audioCtx.current.destination);
+    source.start(1);
+    return source;
+  }
 
   return (
     <Wrapper>
-      <p>{Math.floor(beatCount % metre) || metre}</p>
       <TempoDisplay>{tempo}bpm</TempoDisplay>
       <Pendulum isPlaying={isPlaying} tempo={tempo} />
+      <button onClick={startPulse}>play</button>
     </Wrapper>
   );
 };

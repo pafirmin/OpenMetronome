@@ -18,17 +18,15 @@ Wrapper	src/components/Controls.js	/^const Wrapper = styled.div`$/;"	S
 Wrapper	src/components/Metronome.js	/^const Wrapper = styled.div`$/;"	S
 action	src/reducers/metronomeReducer.test.js	/^    const action = {$/;"	O
 actions	src/actions/metronomeActions.test.js	/^import * as actions from ".\/metronomeActions";$/;"	I
-beatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useState(1);$/;"	V
 content	src/components/Metronome.js	/^    content: "";$/;"	P
-current	src/components/Metronome.js	/^    stopAudio.current = () => clearInterval(pulse);$/;"	M
 decrementMetre	src/components/Controls.js	/^  const decrementMetre = () => {$/;"	F
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_METRE, payload: 7 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_TEMPO, payload: 80 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: TOGGLE_IS_PLAYING };$/;"	O
+getFile	src/components/Metronome.js	/^    const getFile = async () => {$/;"	F
 handleTempo	src/components/Controls.js	/^  const handleTempo = () => {$/;"	F
 incrementMetre	src/components/Controls.js	/^  const incrementMetre = () => {$/;"	F
 initialState	src/reducers/metronomeReducer.js	/^const initialState = {$/;"	O
-interval	src/components/Metronome.js	/^      interval$/;"	V
 isPlaying	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 isPlaying	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 isPlaying	src/reducers/metronomeReducer.js	/^  isPlaying: false,$/;"	P
@@ -41,14 +39,13 @@ payload	src/actions/metronomeActions.js	/^    payload: tempo,$/;"	P
 payload	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 7,$/;"	P
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 80,$/;"	P
-setBeatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useState(1);$/;"	V
+playTick	src/components/Metronome.js	/^  function playTick() {$/;"	F
 setMetre	src/actions/metronomeActions.js	/^export const setMetre = (meter) => {$/;"	E
 setSliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 setTempo	src/actions/metronomeActions.js	/^export const setTempo = (tempo) => {$/;"	E
 sliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
-startPulse	src/components/Metronome.js	/^  const startPulse = () => {$/;"	F
+startPulse	src/components/Metronome.js	/^  const startPulse = useCallback(() => {$/;"	F
 state	src/reducers/metronomeReducer.test.js	/^    const state = {isPlaying: false}$/;"	O
-stopAudio	src/components/Metronome.js	/^  const stopAudio = useRef(() => {});$/;"	F
 tempo	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 tempo	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P
