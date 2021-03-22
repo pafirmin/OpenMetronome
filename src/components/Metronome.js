@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import styled, { css, keyframes } from "styled-components";
-import cowbell from "../assets/cowbell_2.wav";
+import styled, { keyframes, css } from "styled-components";
+import cowbell from "../assets/cowbell-pulse.wav";
+import cowbellBar from "../assets/cowbell-bar.wav";
 
 const Wrapper = styled.div`
   position: relative;
@@ -11,11 +12,11 @@ const Wrapper = styled.div`
 `;
 
 const swing = keyframes`
-  0%, 100% {
-    transform: rotate(45deg); 
+  0% {
+    transform: rotate(-45deg);
   }
-  50% {
-    transform: rotate(-45deg)
+  100% {
+    transform: rotate(45deg);
   }
 `;
 
@@ -27,39 +28,56 @@ const Pendulum = styled.div`
   bottom: 0;
   background-color: #000;
   transform-origin: bottom center;
-  ${(props) => css`
-    animation: ${swing} ${(60 / props.tempo) * 2}s ease-in-out infinite;
-  `};
+  animation: ${(props) =>
+    props.isPlaying &&
+    css`
+      ${swing} ${60 / props.tempo}s linear infinite alternate
+    `};
 `;
 
 const Metronome = () => {
-  const tempo = useSelector((state) => state.tempo);
-  const audioRef = useRef(null);
+  const { tempo, metre, isPlaying } = useSelector((state) => state);
+  const pulseRef = useRef(null);
+  const newBarRef = useRef();
   const stopAudio = useRef(() => {});
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [beatCount, setBeatCount] = useState(1);
 
-  const playAudio = () => {
+  const startPulse = useCallback(() => {
+    stopAudio.current();
     const interval = (60 / tempo) * 1000;
-    const audioLoop = setInterval(() => audioRef.current.play(), interval);
 
-    return () => clearInterval(audioLoop);
-  };
+    const pulse = setInterval(() => setBeatCount((prev) => prev + 1), interval);
 
-  const onPlay = () => {
-    if (!isPlaying) {
-      setIsPlaying(true);
-      stopAudio.current = playAudio();
+    stopAudio.current = () => clearInterval(pulse);
+  }, [tempo]);
+
+  useEffect(() => {
+    setBeatCount(1);
+
+    if (isPlaying) {
+      startPulse();
     } else {
-      setIsPlaying(false);
       stopAudio.current();
     }
-  };
+  }, [isPlaying, tempo, startPulse]);
+
+  useEffect(() => {
+    if (isPlaying) {
+      if (beatCount % metre === 1) {
+        newBarRef.current.play();
+      } else {
+        pulseRef.current.play();
+      }
+    }
+  }, [isPlaying, beatCount, metre]);
 
   return (
     <Wrapper>
-      <button onClick={onPlay} />
-      <audio ref={audioRef} src={cowbell} preload="auto" />
-      <Pendulum tempo={tempo} />
+      <p>{tempo}</p>
+      <p>{beatCount % metre || metre}</p>
+      <audio ref={newBarRef} src={cowbellBar} preload="auto" />
+      <audio ref={pulseRef} src={cowbell} preload="auto" />
+      <Pendulum isPlaying={isPlaying} tempo={tempo} />
     </Wrapper>
   );
 };
