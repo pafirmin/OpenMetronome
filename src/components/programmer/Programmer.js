@@ -9,6 +9,7 @@ const Programmer = () => {
 
   return (
     <div>
+      <ProgramForm />
       {program.map((obj) => (
         <p key={obj.id}>
           {obj.measures} measures of {obj.metre} at {obj.tempo}bpm{" "}
@@ -20,7 +21,6 @@ const Programmer = () => {
           </button>
         </p>
       ))}
-      <ProgramForm />
     </div>
   );
 };

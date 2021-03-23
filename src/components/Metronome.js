@@ -56,14 +56,27 @@ const Pendulum = styled.div`
 
 const Metronome = () => {
   const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);
+  const program = useSelector((state) => state.program); // User defined metronome program
   const dispatch = useDispatch();
-  const program = useSelector((state) => state.program);
   const [beatCount, setBeatCount] = useState(0);
-  const [routine, setroutine] = useState();
-  const [currProgramChunk, setCurrProgramChunk] = useState();
+  const [routine, setRoutine] = useState(); // Iterator object extracted from the current progeam
+  const [currProgramChunk, setCurrProgramChunk] = useState(); // Stores the settings for the current program chunk
   const ticker = useRef(
     new Ticker({ onTick: () => setBeatCount((prev) => prev + 1) })
   );
+
+  const initRoutine = useCallback(() => {
+    const iterator = program[Symbol.iterator]();
+    const chunk = iterator.next().value;
+    setRoutine(iterator);
+    updateChunk(chunk);
+  }, [program, dispatch]);
+
+  const updateChunk = useCallback((chunk) => {
+    dispatch(setMetre(chunk.metre));
+    dispatch(setTempo(chunk.tempo));
+    setCurrProgramChunk(chunk);
+  }, []);
 
   // Listen for tempo and metre changes
   useEffect(() => {
@@ -71,49 +84,46 @@ const Metronome = () => {
     ticker.current.setMetre(metre);
   }, [tempo, metre]);
 
-  // Extract iterator from program routine
   useEffect(() => {
     if (program.length > 0) {
-      const iterator = program[Symbol.iterator]();
-      setroutine(iterator);
-      setCurrProgramChunk(iterator.next().value);
+      initRoutine();
     }
-  }, [program]);
+  }, [program, initRoutine]);
 
   //Listen for end of current program chunk
   useEffect(() => {
-    const handleTick = () => {
-      const nextStep = routine.next().value;
-      if (nextStep) {
-        dispatch(setTempo(nextStep.tempo));
-        dispatch(setMetre(nextStep.metre));
-        setBeatCount(0);
-        setCurrProgramChunk(nextStep);
-      }
-    };
     if (
       currProgramChunk &&
-      beatCount === currProgramChunk.measures * currProgramChunk.metre
+      beatCount === currProgramChunk.metre * currProgramChunk.measures
     ) {
-      handleTick();
+      setBeatCount(0);
+      const nextChunk = routine.next().value;
+      if (nextChunk) {
+        updateChunk(nextChunk);
+      } else {
+        initRoutine();
+      }
     }
-  }, [beatCount, currProgramChunk, dispatch, routine]);
-
+  }, [currProgramChunk, beatCount, initRoutine, routine, updateChunk]);
+  /*
+   * The call to setTimeout below is a temporary
+   * workaround for the 1 or 2 beats that remain in
+   * the buffer after the ticker stops
+   */
   useEffect(() => {
     if (isPlaying) {
       ticker.current.init();
     } else if (ticker.current.stopPulse) {
       ticker.current.stopPulse();
-      setBeatCount(0);
+      setTimeout(() => setBeatCount(0), 1000);
     }
   }, [isPlaying]);
 
   return (
     <Wrapper>
-      <p>{beatCount}</p>
+      <p>{beatCount % metre || metre}</p>
       <TempoDisplay>{tempo}bpm</TempoDisplay>
       <Pendulum isPlaying={isPlaying} tempo={tempo} />
-      {/* <button onClick={playTick}>play</button> */}
     </Wrapper>
   );
 };
