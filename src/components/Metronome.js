@@ -56,11 +56,14 @@ const Pendulum = styled.div`
 
 const Metronome = () => {
   const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);
-  const program = useSelector((state) => state.program); // User defined metronome program
+  // User defined metronome program
+  const program = useSelector((state) => state.program);
   const dispatch = useDispatch();
   const [beatCount, setBeatCount] = useState(0);
-  const [routine, setRoutine] = useState(); // Iterator object extracted from the current progeam
-  const [currProgramChunk, setCurrProgramChunk] = useState(); // Stores the settings for the current program chunk
+  // Iterator object extracted from the current progeam
+  const [routine, setRoutine] = useState();
+  // Stores the settings for the current program chunk
+  const [currProgramChunk, setCurrProgramChunk] = useState();
   const ticker = useRef(
     new Ticker({ onTick: () => setBeatCount((prev) => prev + 1) })
   );

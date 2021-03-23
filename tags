@@ -32,7 +32,7 @@ beatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useS
 constructor	src/helpers/CowbellTicker.js	/^  constructor(audioCtx) {$/;"	M
 constructor	src/helpers/Ticker.js	/^  constructor({ onTick }) {$/;"	M
 content	src/components/Metronome.js	/^    content: "";$/;"	P
-currProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); \/\/ Stores the settings for the current program chunk$/;"	V
+currProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); $/;"	V
 decrementMetre	src/components/Controls.js	/^  const decrementMetre = () => {$/;"	F
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_METRE, payload: 7 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_TEMPO, payload: 80 };$/;"	O
@@ -75,21 +75,21 @@ payload	src/reducers/programmerReducer.test.js	/^      payload: { id: 123 },$/;"
 payload	src/reducers/programmerReducer.test.js	/^      payload: {$/;"	P
 playTick	src/helpers/CowbellTicker.js	/^  playTick() {$/;"	M
 playTick	src/helpers/Ticker.js	/^  playTick() {$/;"	M
-program	src/components/Metronome.js	/^  const program = useSelector((state) => state.program); \/\/ User defined metronome program$/;"	F
+program	src/components/Metronome.js	/^  const program = useSelector((state) => state.program); $/;"	F
 program	src/components/programmer/Programmer.js	/^  const program = useSelector((state) => state.program);$/;"	F
 program	src/store/store.js	/^  program: programmerReducer$/;"	P
 programmerReducer	src/reducers/ProgrammerReducer.js	/^const programmerReducer = (state = initialState, action) => {$/;"	F
 pulse	src/helpers/Ticker.js	/^  pulse() {$/;"	M
 removeFromProgram	src/actions/programmerActions.js	/^export const removeFromProgram = (obj) => {$/;"	E
-routine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); \/\/ Iterator object extracted from the current progeam$/;"	V
+routine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); $/;"	V
 secondsPerBeat	src/helpers/CowbellTicker.js	/^    const secondsPerBeat = 60.0 \/ this.tempo;$/;"	V
 setBeatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useState(0);$/;"	V
-setCurrProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); \/\/ Stores the settings for the current program chunk$/;"	V
+setCurrProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); $/;"	V
 setFormCount	src/components/Programmer.js	/^  const [formCount, setFormCount] = useState(1)$/;"	V
 setFormValues	src/components/programmer/ProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
 setMetre	src/actions/metronomeActions.js	/^export const setMetre = (meter) => {$/;"	E
 setMetre	src/helpers/Ticker.js	/^  setMetre(metre) {$/;"	M
-setRoutine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); \/\/ Iterator object extracted from the current progeam$/;"	V
+setRoutine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); $/;"	V
 setSliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 setTempo	src/actions/metronomeActions.js	/^export const setTempo = (tempo) => {$/;"	E
 setTempo	src/helpers/Ticker.js	/^  setTempo(tempo) {$/;"	M
