@@ -37,7 +37,7 @@ const StartBtn = styled.button`
 `;
 
 const Controls = () => {
-  const { tempo, metre, isPlaying } = useSelector((state) => state);
+  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);
   const dispatch = useDispatch();
   const [sliderVal, setSliderVal] = useState(tempo);
 

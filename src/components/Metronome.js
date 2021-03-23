@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled, { keyframes, css } from "styled-components";
-import UIfx from "uifx";
 import Ticker from "../helpers/Ticker";
+import { setTempo, setMetre } from "../actions/metronomeActions";
 
 const Wrapper = styled.div`
   position: relative;
@@ -55,19 +55,62 @@ const Pendulum = styled.div`
 `;
 
 const Metronome = () => {
-  const { tempo, metre, isPlaying } = useSelector((state) => state);
-  const ticker = useRef(new Ticker());
+  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);
+  const dispatch = useDispatch();
+  const program = useSelector((state) => state.program);
+  const [beatCount, setBeatCount] = useState(0);
+  const [routine, setroutine] = useState();
+  const [currProgramChunk, setCurrProgramChunk] = useState();
+  const ticker = useRef(
+    new Ticker({ onTick: () => setBeatCount((prev) => prev + 1) })
+  );
+
+  // Listen for tempo and metre changes
+  useEffect(() => {
+    ticker.current.setTempo(tempo);
+    ticker.current.setMetre(metre);
+  }, [tempo, metre]);
+
+  // Extract iterator from program routine
+  useEffect(() => {
+    if (program.length > 0) {
+      const iterator = program[Symbol.iterator]();
+      setroutine(iterator);
+      setCurrProgramChunk(iterator.next().value);
+    }
+  }, [program]);
+
+  //Listen for end of current program chunk
+  useEffect(() => {
+    const handleTick = () => {
+      const nextStep = routine.next().value;
+      if (nextStep) {
+        dispatch(setTempo(nextStep.tempo));
+        dispatch(setMetre(nextStep.metre));
+        setBeatCount(0);
+        setCurrProgramChunk(nextStep);
+      }
+    };
+    if (
+      currProgramChunk &&
+      beatCount === currProgramChunk.measures * currProgramChunk.metre
+    ) {
+      handleTick();
+    }
+  }, [beatCount, currProgramChunk, dispatch, routine]);
 
   useEffect(() => {
     if (isPlaying) {
-      ticker.current.startPulse(tempo, metre);
+      ticker.current.init();
     } else if (ticker.current.stopPulse) {
       ticker.current.stopPulse();
+      setBeatCount(0);
     }
-  }, [isPlaying, tempo, metre]);
+  }, [isPlaying]);
 
   return (
     <Wrapper>
+      <p>{beatCount}</p>
       <TempoDisplay>{tempo}bpm</TempoDisplay>
       <Pendulum isPlaying={isPlaying} tempo={tempo} />
       {/* <button onClick={playTick}>play</button> */}

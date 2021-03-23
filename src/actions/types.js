@@ -1,3 +1,6 @@
 export const TOGGLE_IS_PLAYING = "TOGGLE_IS_PLAYING";
 export const SET_TEMPO = "SET_TEMPO";
 export const SET_METRE = "SET_METRE";
+
+export const ADD_TO_PROGRAM = "ADD_TO_PROGRAM";
+export const REMOVE_FROM_PROGRAM = "REMOVE_FROM_PROGRAM";
