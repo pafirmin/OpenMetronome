@@ -1,5 +1,4 @@
-# Open Metronome
---This is a work in progress--
+# Open Metronome: a work in progress
 My aim is to create a free and functional programmable metronome, as such a thing is hard to come by on the web. Primarily, users must be able to create routines to alternate between time signatures/tempos. Utilises the web audio API for consistent timing.
 
 ## To do
