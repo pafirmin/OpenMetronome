@@ -18,15 +18,17 @@ Wrapper	src/components/Controls.js	/^const Wrapper = styled.div`$/;"	S
 Wrapper	src/components/Metronome.js	/^const Wrapper = styled.div`$/;"	S
 action	src/reducers/metronomeReducer.test.js	/^    const action = {$/;"	O
 actions	src/actions/metronomeActions.test.js	/^import * as actions from ".\/metronomeActions";$/;"	I
+constructor	src/helpers/CowbellTicker.js	/^  constructor(audioCtx) {$/;"	M
+constructor	src/helpers/Ticker.js	/^  constructor() {$/;"	M
 content	src/components/Metronome.js	/^    content: "";$/;"	P
 decrementMetre	src/components/Controls.js	/^  const decrementMetre = () => {$/;"	F
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_METRE, payload: 7 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_TEMPO, payload: 80 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: TOGGLE_IS_PLAYING };$/;"	O
-getFile	src/components/Metronome.js	/^    const getFile = async () => {$/;"	F
 handleTempo	src/components/Controls.js	/^  const handleTempo = () => {$/;"	F
 incrementMetre	src/components/Controls.js	/^  const incrementMetre = () => {$/;"	F
 initialState	src/reducers/metronomeReducer.js	/^const initialState = {$/;"	O
+interval	src/helpers/Ticker.js	/^    const interval = setInterval(() => this.pulse(), (60 \/ tempo) * 1000);$/;"	F
 isPlaying	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 isPlaying	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 isPlaying	src/reducers/metronomeReducer.js	/^  isPlaying: false,$/;"	P
@@ -34,18 +36,24 @@ metre	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSele
 metre	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 metre	src/reducers/metronomeReducer.js	/^  metre: 4,$/;"	P
 metronomeReducer	src/reducers/metronomeReducer.js	/^const metronomeReducer = (state = initialState, action) => {$/;"	F
+nextNote	src/helpers/CowbellTicker.js	/^  nextNote() {$/;"	M
 payload	src/actions/metronomeActions.js	/^    payload: meter,$/;"	P
 payload	src/actions/metronomeActions.js	/^    payload: tempo,$/;"	P
 payload	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 7,$/;"	P
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 80,$/;"	P
-playTick	src/components/Metronome.js	/^  function playTick() {$/;"	F
+playTick	src/helpers/CowbellTicker.js	/^  playTick() {$/;"	M
+playTick	src/helpers/Ticker.js	/^  playTick() {$/;"	M
+pulse	src/helpers/Ticker.js	/^  pulse() {$/;"	M
+secondsPerBeat	src/helpers/CowbellTicker.js	/^    const secondsPerBeat = 60.0 \/ this.tempo;$/;"	V
 setMetre	src/actions/metronomeActions.js	/^export const setMetre = (meter) => {$/;"	E
 setSliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 setTempo	src/actions/metronomeActions.js	/^export const setTempo = (tempo) => {$/;"	E
 sliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
-startPulse	src/components/Metronome.js	/^  const startPulse = useCallback(() => {$/;"	F
-state	src/reducers/metronomeReducer.test.js	/^    const state = {isPlaying: false}$/;"	O
+startPulse	src/helpers/CowbellTicker.js	/^  startPulse() {$/;"	M
+startPulse	src/helpers/Ticker.js	/^  startPulse(tempo, metre) {$/;"	M
+state	src/reducers/metronomeReducer.test.js	/^    const state = { isPlaying: false };$/;"	O
+stopPulse	src/helpers/Ticker.js	/^    this.stopPulse = () => {$/;"	M
 tempo	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 tempo	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state);$/;"	V
 tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P

@@ -2,8 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import styled, { keyframes, css } from "styled-components";
 import UIfx from "uifx";
-import cowbell from "../assets/cowbell-pulse.wav";
-import cowbellBar from "../assets/cowbell-bar.wav";
+import Ticker from "../helpers/Ticker";
 
 const Wrapper = styled.div`
   position: relative;
@@ -57,39 +56,21 @@ const Pendulum = styled.div`
 
 const Metronome = () => {
   const { tempo, metre, isPlaying } = useSelector((state) => state);
-  const audioCtx = useRef(new AudioContext());
-  const pulse = useRef(null);
-
-  const startPulse = useCallback(() => {
-    const interval = (60 / tempo) * 1000;
-
-    setInterval(() => playTick(), interval);
-  }, [tempo]);
+  const ticker = useRef(new Ticker());
 
   useEffect(() => {
-    const getFile = async () => {
-      const res = await fetch(cowbell);
-      const arrayBuffer = await res.arrayBuffer();
-      pulse.current = await audioCtx.current.decodeAudioData(arrayBuffer);
-
-      console.log(pulse.current);
-    };
-    getFile();
-  }, []);
-
-  function playTick() {
-    const source = audioCtx.current.createBufferSource();
-    source.buffer = pulse.current;
-    source.connect(audioCtx.current.destination);
-    source.start(1);
-    return source;
-  }
+    if (isPlaying) {
+      ticker.current.startPulse(tempo, metre);
+    } else if (ticker.current.stopPulse) {
+      ticker.current.stopPulse();
+    }
+  }, [isPlaying, tempo, metre]);
 
   return (
     <Wrapper>
       <TempoDisplay>{tempo}bpm</TempoDisplay>
       <Pendulum isPlaying={isPlaying} tempo={tempo} />
-      <button onClick={startPulse}>play</button>
+      {/* <button onClick={playTick}>play</button> */}
     </Wrapper>
   );
 };
