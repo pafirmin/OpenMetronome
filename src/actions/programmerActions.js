@@ -1,4 +1,4 @@
-import { ADD_TO_PROGRAM, REMOVE_FROM_PROGRAM } from "./types";
+import { ADD_TO_PROGRAM, CLEAR_PROGRAM, REMOVE_FROM_PROGRAM } from "./types";
 
 export const addToProgram = (obj) => {
   return {
@@ -12,4 +12,8 @@ export const removeFromProgram = (obj) => {
     type: REMOVE_FROM_PROGRAM,
     payload: obj,
   };
+};
+
+export const clearProgram = () => {
+  return { type: CLEAR_PROGRAM };
 };

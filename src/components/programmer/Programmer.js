@@ -1,26 +1,54 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromProgram } from "../../actions/programmerActions";
-import ProgramForm from "./ProgramForm";
+import styled from "styled-components";
+import CustomProgram from "./CustomProgram";
+import RampTempo from "./RampTempo";
+
+const TabbedNav = styled.nav`
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+`;
+
+const Tab = styled.span`
+  border-bottom: 2px solid #d3d3d3;
+  width: 200px;
+  text-align: center;
+  padding-bottom: 0.3rem;
+  position: relative;
+  color: ${(props) => (props.isActive ? "#dfdfdf" : "#9d9d9d")};
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: ${(props) => (props.isActive ? "100%" : "0")};
+    background-color: red;
+
+    transition: width 0.3s;
+  }
+`;
 
 const Programmer = () => {
-  const program = useSelector((state) => state.program);
-  const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div>
-      <ProgramForm />
-      {program.map((obj) => (
-        <p key={obj.id}>
-          {obj.measures} measures of {obj.metre} at {obj.tempo}bpm{" "}
-          <button
-            type="button"
-            onClick={() => dispatch(removeFromProgram(obj))}
-          >
-            Remove
-          </button>
-        </p>
-      ))}
+    <div style={{ marginTop: "2rem" }}>
+      <TabbedNav>
+        <Tab isActive={activeTab === 1} onClick={() => setActiveTab(1)}>
+          Tempo ramp
+        </Tab>
+        <Tab isActive={activeTab === 2} onClick={() => setActiveTab(2)}>
+          Custom
+        </Tab>
+      </TabbedNav>
+      {activeTab === 1 && <RampTempo />}
+
+      {activeTab === 2 && <CustomProgram />}
     </div>
   );
 };

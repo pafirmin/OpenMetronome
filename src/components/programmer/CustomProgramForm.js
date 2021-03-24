@@ -1,32 +1,13 @@
-import styled from "styled-components";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToProgram } from "../../actions/programmerActions";
 import { v4 as uuid } from "uuid";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import { nextProgramChunk } from "../../actions/metronomeActions";
+import ProgramForm from "../styled-components/ProgramForm";
 
-const StyledForm = styled.form`
-  display: flex;
-  align-items: center;
-  font-size: 1.4rem;
-
-  & input {
-    width: 3em;
-    font-size: inherit;
-  }
-
-  & > * + * {
-    margin-left: 0.5rem;
-  }
-`;
-
-const AddBtn = styled.button`
-  background: transparent;
-  border: none;
-  color: inherit;
-`;
-
-const ProgramForm = () => {
+const CustomProgramForm = () => {
+  const { program } = useSelector((state) => state.program);
   const dispatch = useDispatch();
   const [formValues, setFormValues] = useState({
     measures: 4,
@@ -35,17 +16,18 @@ const ProgramForm = () => {
     silent: false,
   });
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    dispatch(
-      addToProgram({
-        measures: Number(formValues.measures),
-        metre: Number(formValues.metre),
-        tempo: Number(formValues.tempo),
-        silent: formValues.silent,
-        id: uuid(),
-      })
-    );
+  const handleSubmit = () => {
+    const settings = {
+      measures: Number(formValues.measures),
+      metre: Number(formValues.metre),
+      tempo: Number(formValues.tempo),
+      silent: formValues.silent,
+      id: uuid(),
+    };
+    if (program.length === 0) {
+      dispatch(nextProgramChunk(settings));
+    }
+    dispatch(addToProgram(settings));
   };
 
   const handleChange = (e) => {
@@ -56,7 +38,7 @@ const ProgramForm = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <ProgramForm onSubmit={handleSubmit}>
       <input
         type="number"
         name="measures"
@@ -91,8 +73,8 @@ const ProgramForm = () => {
         aria-label="Add to program"
         style={{ fontSize: 30, cursor: "pointer" }}
       />
-    </StyledForm>
+    </ProgramForm>
   );
 };
 
-export default ProgramForm;
+export default CustomProgramForm;

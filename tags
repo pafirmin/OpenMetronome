@@ -4,117 +4,179 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ADD_TO_PROGRAM	src/actions/types.js	/^export const ADD_TO_PROGRAM = "ADD_TO_PROGRAM"$/;"	E
-AddBtn	src/components/programmer/ProgramForm.js	/^const AddBtn = styled.button`$/;"	S
+ADD_TO_PROGRAM	src/actions/programmerActions.js	/^  ADD_TO_PROGRAM,$/;"	V
+ADD_TO_PROGRAM	src/actions/types.js	/^export const ADD_TO_PROGRAM = "ADD_TO_PROGRAM";$/;"	E
+ADD_TO_PROGRAM	src/reducers/programmerReducer.js	/^  ADD_TO_PROGRAM,$/;"	V
+ADD_TO_PROGRAM	src/reducers/programmerReducer.test.js	/^  ADD_TO_PROGRAM,$/;"	V
 App	src/App.js	/^const App = () => {$/;"	F
+CLEAR_PROGRAM	src/actions/programmerActions.js	/^  CLEAR_PROGRAM,$/;"	V
+CLEAR_PROGRAM	src/actions/types.js	/^export const CLEAR_PROGRAM = "CLEAR_PROGRAM";$/;"	E
+CLEAR_PROGRAM	src/reducers/programmerReducer.js	/^  CLEAR_PROGRAM,$/;"	V
+CLEAR_PROGRAM	src/reducers/programmerReducer.test.js	/^  CLEAR_PROGRAM,$/;"	V
 Controls	src/components/Controls.js	/^const Controls = () => {$/;"	F
+Custom	src/components/programmer/Programmer.js	/^          Custom$/;"	V
+CustomProgram	src/components/programmer/CustomProgram.js	/^const CustomProgram = () => {$/;"	F
+CustomProgramForm	src/components/programmer/CustomProgramForm.js	/^const CustomProgramForm = () => {$/;"	F
+INCREMENT_BEAT_COUNT	src/actions/metronomeActions.js	/^  INCREMENT_BEAT_COUNT,$/;"	V
+INCREMENT_BEAT_COUNT	src/actions/types.js	/^export const INCREMENT_BEAT_COUNT = "INCREMENT_BEAT_COUNT";$/;"	E
+INCREMENT_BEAT_COUNT	src/reducers/metronomeReducer.js	/^  INCREMENT_BEAT_COUNT,$/;"	V
+MainWrapper	src/App.js	/^const MainWrapper = styled.div`$/;"	S
 MetreControl	src/components/Controls.js	/^const MetreControl = styled.div`$/;"	S
 Metronome	src/components/Metronome.js	/^const Metronome = () => {$/;"	F
+NEXT_PROGRAM_CHUNK	src/actions/metronomeActions.js	/^  NEXT_PROGRAM_CHUNK,$/;"	V
+NEXT_PROGRAM_CHUNK	src/actions/types.js	/^export const NEXT_PROGRAM_CHUNK = "NEXT_PROGRAM_CHUNK";$/;"	E
+NEXT_PROGRAM_CHUNK	src/reducers/metronomeReducer.js	/^  NEXT_PROGRAM_CHUNK,$/;"	V
+NEXT_PROGRAM_CHUNK	src/reducers/programmerReducer.js	/^  NEXT_PROGRAM_CHUNK,$/;"	V
 Pendulum	src/components/Metronome.js	/^const Pendulum = styled.div`$/;"	S
-ProgramForm	src/components/programmer/ProgramForm.js	/^const ProgramForm = () => {$/;"	F
-Programmer	src/components/Programmer.js	/^const Programmer = () => {$/;"	F
 Programmer	src/components/programmer/Programmer.js	/^const Programmer = () => {$/;"	F
-REMOVE_FROM_PROGRAM	src/actions/types.js	/^export const REMOVE_FROM_PROGRAM = "REMOVE_FROM_PROGRAM"$/;"	E
-Remove	src/components/programmer/Programmer.js	/^            Remove$/;"	V
+REMOVE_FROM_PROGRAM	src/actions/programmerActions.js	/^  REMOVE_FROM_PROGRAM,$/;"	V
+REMOVE_FROM_PROGRAM	src/actions/types.js	/^export const REMOVE_FROM_PROGRAM = "REMOVE_FROM_PROGRAM";$/;"	E
+REMOVE_FROM_PROGRAM	src/reducers/programmerReducer.js	/^  REMOVE_FROM_PROGRAM,$/;"	V
+REMOVE_FROM_PROGRAM	src/reducers/programmerReducer.test.js	/^  REMOVE_FROM_PROGRAM,$/;"	V
+RESET_BEAT_COUNT	src/actions/metronomeActions.js	/^  RESET_BEAT_COUNT,$/;"	V
+RESET_BEAT_COUNT	src/actions/types.js	/^export const RESET_BEAT_COUNT = "RESET_BEAT_COUNT";$/;"	E
+RESET_BEAT_COUNT	src/reducers/metronomeReducer.js	/^  RESET_BEAT_COUNT,$/;"	V
+RampTempo	src/components/programmer/RampTempo.js	/^const RampTempo = () => {$/;"	F
+Remove	src/components/programmer/CustomProgram.js	/^            Remove$/;"	V
+SET_METRE	src/actions/metronomeActions.js	/^  SET_METRE,$/;"	V
 SET_METRE	src/actions/types.js	/^export const SET_METRE = "SET_METRE";$/;"	E
+SET_METRE	src/reducers/metronomeReducer.js	/^  SET_METRE,$/;"	V
+SET_TEMPO	src/actions/metronomeActions.js	/^  SET_TEMPO,$/;"	V
 SET_TEMPO	src/actions/types.js	/^export const SET_TEMPO = "SET_TEMPO";$/;"	E
+SET_TEMPO	src/reducers/metronomeReducer.js	/^  SET_TEMPO,$/;"	V
 StartBtn	src/components/Controls.js	/^const StartBtn = styled.button`$/;"	S
-StyledForm	src/components/programmer/ProgramForm.js	/^const StyledForm = styled.form`$/;"	S
+TOGGLE_IS_PLAYING	src/actions/metronomeActions.js	/^  TOGGLE_IS_PLAYING,$/;"	V
 TOGGLE_IS_PLAYING	src/actions/types.js	/^export const TOGGLE_IS_PLAYING = "TOGGLE_IS_PLAYING";$/;"	E
+TOGGLE_IS_PLAYING	src/reducers/metronomeReducer.js	/^  TOGGLE_IS_PLAYING,$/;"	V
+Tab	src/components/programmer/Programmer.js	/^const Tab = styled.span`$/;"	S
+TabbedNav	src/components/programmer/Programmer.js	/^const TabbedNav = styled.nav`$/;"	S
 TempoDisplay	src/components/Metronome.js	/^const TempoDisplay = styled.span`$/;"	S
 Wrapper	src/components/Controls.js	/^const Wrapper = styled.div`$/;"	S
 Wrapper	src/components/Metronome.js	/^const Wrapper = styled.div`$/;"	S
 action	src/reducers/metronomeReducer.test.js	/^    const action = {$/;"	O
+action	src/reducers/programmerReducer.test.js	/^    const action = { type: CLEAR_PROGRAM };$/;"	O
 action	src/reducers/programmerReducer.test.js	/^    const action = {$/;"	O
 actions	src/actions/metronomeActions.test.js	/^import * as actions from ".\/metronomeActions";$/;"	I
+activeTab	src/components/programmer/Programmer.js	/^  const [activeTab, setActiveTab] = useState(1);$/;"	V
 addToProgram	src/actions/programmerActions.js	/^export const addToProgram = (obj) => {$/;"	E
-beatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useState(0);$/;"	V
+beatCount	src/components/Metronome.js	/^  const { tempo, metre, isPlaying, beatCount } = useSelector($/;"	V
+beatCount	src/components/programmer/CustomProgram.js	/^  const beatCount = useSelector((state) => state.metronome.beatCount);$/;"	F
+beatCount	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
+beatCount	src/reducers/metronomeReducer.js	/^        beatCount: 0,$/;"	P
+beatCount	src/reducers/metronomeReducer.js	/^  beatCount: 0,$/;"	P
+clearProgram	src/actions/programmerActions.js	/^export const clearProgram = () => {$/;"	E
+clearProgram	src/components/programmer/CustomProgram.js	/^  clearProgram,$/;"	V
 constructor	src/helpers/CowbellTicker.js	/^  constructor(audioCtx) {$/;"	M
 constructor	src/helpers/Ticker.js	/^  constructor({ onTick }) {$/;"	M
 content	src/components/Metronome.js	/^    content: "";$/;"	P
-currProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); $/;"	V
+content	src/components/programmer/Programmer.js	/^    content: "";$/;"	P
+currentChunk	src/components/programmer/CustomProgram.js	/^  const { program, currentChunk } = useSelector((state) => state.program);$/;"	V
+currentChunk	src/reducers/programmerReducer.js	/^  currentChunk: {},$/;"	P
+currentChunk	src/reducers/programmerReducer.test.js	/^      currentChunk: {$/;"	P
+currentChunk	src/reducers/programmerReducer.test.js	/^      currentChunk: {},$/;"	P
+cycleProgram	src/components/programmer/CustomProgram.js	/^  const cycleProgram = useCallback(() => {$/;"	F
 decrementMetre	src/components/Controls.js	/^  const decrementMetre = () => {$/;"	F
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_METRE, payload: 7 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_TEMPO, payload: 80 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: TOGGLE_IS_PLAYING };$/;"	O
-formCount	src/components/Programmer.js	/^  const [formCount, setFormCount] = useState(1)$/;"	V
-formValues	src/components/programmer/ProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
-handleChange	src/components/programmer/ProgramForm.js	/^  const handleChange = (e) => {$/;"	F
-handleSubmit	src/components/programmer/ProgramForm.js	/^  const handleSubmit = (e) => {$/;"	F
+formValues	src/components/programmer/CustomProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
+handleChange	src/components/programmer/CustomProgramForm.js	/^  const handleChange = (e) => {$/;"	F
+handleDelete	src/components/programmer/CustomProgram.js	/^  const handleDelete = (obj) => {$/;"	F
+handleSubmit	src/components/programmer/CustomProgramForm.js	/^  const handleSubmit = () => {$/;"	F
 handleTempo	src/components/Controls.js	/^  const handleTempo = () => {$/;"	F
-id	src/reducers/programmerReducer.test.js	/^        id: 123,$/;"	P
+id	src/reducers/programmerReducer.test.js	/^          id: 123,$/;"	P
+id	src/reducers/programmerReducer.test.js	/^          id: 456,$/;"	P
+id	src/reducers/programmerReducer.test.js	/^        id: 456,$/;"	P
+incrementBeatCount	src/actions/metronomeActions.js	/^export const incrementBeatCount = (val) => {$/;"	E
+incrementBeatCount	src/components/Metronome.js	/^  incrementBeatCount,$/;"	V
 incrementMetre	src/components/Controls.js	/^  const incrementMetre = () => {$/;"	F
 init	src/helpers/Ticker.js	/^  init() {$/;"	M
-initRoutine	src/components/Metronome.js	/^  const initRoutine = useCallback(() => {$/;"	F
-initialState	src/reducers/ProgrammerReducer.js	/^const initialState = []$/;"	A
 initialState	src/reducers/metronomeReducer.js	/^const initialState = {$/;"	O
-initialState	src/reducers/programmerReducer.test.js	/^    const initialState = [$/;"	A
-initialState	src/reducers/programmerReducer.test.js	/^    const initialState = [];$/;"	A
+initialState	src/reducers/programmerReducer.js	/^const initialState = {$/;"	O
+initialState	src/reducers/programmerReducer.test.js	/^    const initialState = { program: [], currentChunk: {} };$/;"	O
+initialState	src/reducers/programmerReducer.test.js	/^    const initialState = {$/;"	O
 interval	src/helpers/Ticker.js	/^    const interval = setInterval(() => this.pulse(), 100);$/;"	F
 isPlaying	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-isPlaying	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
+isPlaying	src/components/Metronome.js	/^  const { tempo, metre, isPlaying, beatCount } = useSelector($/;"	V
+isPlaying	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 isPlaying	src/reducers/metronomeReducer.js	/^  isPlaying: false,$/;"	P
-measures	src/components/programmer/ProgramForm.js	/^    measures: 4,$/;"	P
+measures	src/components/programmer/CustomProgramForm.js	/^    measures: 4,$/;"	P
+measures	src/reducers/programmerReducer.test.js	/^          measures: 4,$/;"	P
 measures	src/reducers/programmerReducer.test.js	/^        measures: 4,$/;"	P
 metre	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-metre	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-metre	src/components/programmer/ProgramForm.js	/^    metre: 4,$/;"	P
+metre	src/components/Metronome.js	/^  const { tempo, metre, isPlaying, beatCount } = useSelector($/;"	V
+metre	src/components/programmer/CustomProgramForm.js	/^    metre: 4,$/;"	P
+metre	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 metre	src/reducers/metronomeReducer.js	/^  metre: 4,$/;"	P
+metre	src/reducers/programmerReducer.test.js	/^          metre: 3,$/;"	P
+metre	src/reducers/programmerReducer.test.js	/^          metre: 4,$/;"	P
+metre	src/reducers/programmerReducer.test.js	/^        metre: 3,$/;"	P
 metre	src/reducers/programmerReducer.test.js	/^        metre: 4,$/;"	P
 metronome	src/store/store.js	/^  metronome: metronomeReducer,$/;"	P
 metronomeReducer	src/reducers/metronomeReducer.js	/^const metronomeReducer = (state = initialState, action) => {$/;"	F
 nextNote	src/helpers/CowbellTicker.js	/^  nextNote() {$/;"	M
+nextProgramChunk	src/actions/metronomeActions.js	/^export const nextProgramChunk = (obj) => {$/;"	E
 payload	src/actions/metronomeActions.js	/^    payload: meter,$/;"	P
+payload	src/actions/metronomeActions.js	/^    payload: obj,$/;"	P
 payload	src/actions/metronomeActions.js	/^    payload: tempo,$/;"	P
 payload	src/actions/programmerActions.js	/^    payload: obj,$/;"	P
-payload	src/reducers/ProgrammerReducer.js	/^  const { type, payload } = action;$/;"	V
 payload	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 7,$/;"	P
 payload	src/reducers/metronomeReducer.test.js	/^      payload: 80,$/;"	P
+payload	src/reducers/programmerReducer.js	/^  const { type, payload } = action;$/;"	V
 payload	src/reducers/programmerReducer.test.js	/^      payload: { id: 123 },$/;"	P
 payload	src/reducers/programmerReducer.test.js	/^      payload: {$/;"	P
 playTick	src/helpers/CowbellTicker.js	/^  playTick() {$/;"	M
 playTick	src/helpers/Ticker.js	/^  playTick() {$/;"	M
-program	src/components/Metronome.js	/^  const program = useSelector((state) => state.program); $/;"	F
-program	src/components/programmer/Programmer.js	/^  const program = useSelector((state) => state.program);$/;"	F
-program	src/store/store.js	/^  program: programmerReducer$/;"	P
-programmerReducer	src/reducers/ProgrammerReducer.js	/^const programmerReducer = (state = initialState, action) => {$/;"	F
+program	src/components/programmer/CustomProgram.js	/^  const { program, currentChunk } = useSelector((state) => state.program);$/;"	V
+program	src/components/programmer/CustomProgramForm.js	/^  const { program } = useSelector((state) => state.program);$/;"	V
+program	src/reducers/programmerReducer.js	/^  program: [],$/;"	P
+program	src/reducers/programmerReducer.test.js	/^      program: [$/;"	P
+program	src/store/store.js	/^  program: programmerReducer,$/;"	P
+programmerReducer	src/reducers/programmerReducer.js	/^const programmerReducer = (state = initialState, action) => {$/;"	F
 pulse	src/helpers/Ticker.js	/^  pulse() {$/;"	M
+rampFrequency	src/components/programmer/RampTempo.js	/^  const [rampFrequency, setRampFrequency] = useState(4);$/;"	V
 removeFromProgram	src/actions/programmerActions.js	/^export const removeFromProgram = (obj) => {$/;"	E
-routine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); $/;"	V
+removeFromProgram	src/components/programmer/CustomProgram.js	/^  removeFromProgram,$/;"	V
+resetBeatCount	src/actions/metronomeActions.js	/^export const resetBeatCount = () => {$/;"	E
+resetBeatCount	src/components/Metronome.js	/^  resetBeatCount,$/;"	V
 secondsPerBeat	src/helpers/CowbellTicker.js	/^    const secondsPerBeat = 60.0 \/ this.tempo;$/;"	V
-setBeatCount	src/components/Metronome.js	/^  const [beatCount, setBeatCount] = useState(0);$/;"	V
-setCurrProgramChunk	src/components/Metronome.js	/^  const [currProgramChunk, setCurrProgramChunk] = useState(); $/;"	V
-setFormCount	src/components/Programmer.js	/^  const [formCount, setFormCount] = useState(1)$/;"	V
-setFormValues	src/components/programmer/ProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
+setActiveTab	src/components/programmer/Programmer.js	/^  const [activeTab, setActiveTab] = useState(1);$/;"	V
+setFormValues	src/components/programmer/CustomProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
 setMetre	src/actions/metronomeActions.js	/^export const setMetre = (meter) => {$/;"	E
 setMetre	src/helpers/Ticker.js	/^  setMetre(metre) {$/;"	M
-setRoutine	src/components/Metronome.js	/^  const [routine, setRoutine] = useState(); $/;"	V
+setRampFrequency	src/components/programmer/RampTempo.js	/^  const [rampFrequency, setRampFrequency] = useState(4);$/;"	V
 setSliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 setTempo	src/actions/metronomeActions.js	/^export const setTempo = (tempo) => {$/;"	E
 setTempo	src/helpers/Ticker.js	/^  setTempo(tempo) {$/;"	M
-silent	src/components/programmer/ProgramForm.js	/^    silent: false,$/;"	P
+setTempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(10);$/;"	V
+settings	src/components/programmer/CustomProgramForm.js	/^    const settings = {$/;"	O
+silent	src/components/programmer/CustomProgramForm.js	/^    silent: false,$/;"	P
+silent	src/reducers/programmerReducer.test.js	/^          silent: false,$/;"	P
 silent	src/reducers/programmerReducer.test.js	/^        silent: false,$/;"	P
 sliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 startPulse	src/helpers/CowbellTicker.js	/^  startPulse() {$/;"	M
 startPulse	src/helpers/Ticker.js	/^  startPulse() {$/;"	M
 state	src/reducers/metronomeReducer.test.js	/^    const state = { isPlaying: false };$/;"	O
 tempo	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-tempo	src/components/Metronome.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-tempo	src/components/programmer/ProgramForm.js	/^    tempo: 120,$/;"	P
+tempo	src/components/Metronome.js	/^  const { tempo, metre, isPlaying, beatCount } = useSelector($/;"	V
+tempo	src/components/programmer/CustomProgramForm.js	/^    tempo: 120,$/;"	P
+tempo	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P
+tempo	src/reducers/programmerReducer.test.js	/^          tempo: 120,$/;"	P
 tempo	src/reducers/programmerReducer.test.js	/^        tempo: 120,$/;"	P
+tempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(10);$/;"	V
 togglePlay	src/actions/metronomeActions.js	/^export const togglePlay = () => {$/;"	E
+type	src/actions/metronomeActions.js	/^    type: NEXT_PROGRAM_CHUNK,$/;"	P
 type	src/actions/metronomeActions.js	/^    type: SET_METRE,$/;"	P
 type	src/actions/metronomeActions.js	/^    type: SET_TEMPO,$/;"	P
 type	src/actions/programmerActions.js	/^    type: ADD_TO_PROGRAM,$/;"	P
 type	src/actions/programmerActions.js	/^    type: REMOVE_FROM_PROGRAM,$/;"	P
-type	src/reducers/ProgrammerReducer.js	/^  const { type, payload } = action;$/;"	V
 type	src/reducers/metronomeReducer.js	/^  const { type, payload } = action;$/;"	V
 type	src/reducers/metronomeReducer.test.js	/^      type: SET_METRE,$/;"	P
 type	src/reducers/metronomeReducer.test.js	/^      type: SET_TEMPO,$/;"	P
 type	src/reducers/metronomeReducer.test.js	/^      type: TOGGLE_IS_PLAYING,$/;"	P
+type	src/reducers/programmerReducer.js	/^  const { type, payload } = action;$/;"	V
 type	src/reducers/programmerReducer.test.js	/^      type: ADD_TO_PROGRAM,$/;"	P
 type	src/reducers/programmerReducer.test.js	/^      type: REMOVE_FROM_PROGRAM,$/;"	P
-updateChunk	src/components/Metronome.js	/^  const updateChunk = useCallback((chunk) => {$/;"	F
-uuid	src/components/programmer/ProgramForm.js	/^import { v4 as uuid } from "uuid";$/;"	I
+uuid	src/components/programmer/CustomProgramForm.js	/^import { v4 as uuid } from "uuid";$/;"	I

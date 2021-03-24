@@ -1,9 +1,17 @@
-import { TOGGLE_IS_PLAYING, SET_TEMPO, SET_METRE } from "../actions/types";
+import {
+  TOGGLE_IS_PLAYING,
+  SET_TEMPO,
+  SET_METRE,
+  INCREMENT_BEAT_COUNT,
+  RESET_BEAT_COUNT,
+  NEXT_PROGRAM_CHUNK,
+} from "../actions/types";
 
 const initialState = {
   tempo: 120,
   metre: 4,
   isPlaying: false,
+  beatCount: 0,
 };
 
 const metronomeReducer = (state = initialState, action) => {
@@ -15,6 +23,17 @@ const metronomeReducer = (state = initialState, action) => {
       return { ...state, tempo: payload };
     case SET_METRE:
       return { ...state, metre: payload };
+    case INCREMENT_BEAT_COUNT:
+      return { ...state, beatCount: state.beatCount + 1 };
+    case RESET_BEAT_COUNT:
+      return { ...state, beatCount: 0 };
+    case NEXT_PROGRAM_CHUNK:
+      return {
+        ...state,
+        tempo: payload.tempo,
+        metre: payload.metre,
+        beatCount: 0,
+      };
     default:
       return state;
   }

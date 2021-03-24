@@ -1,8 +1,11 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled, { keyframes, css } from "styled-components";
 import Ticker from "../helpers/Ticker";
-import { setTempo, setMetre } from "../actions/metronomeActions";
+import {
+  incrementBeatCount,
+  resetBeatCount,
+} from "../actions/metronomeActions";
 
 const Wrapper = styled.div`
   position: relative;
@@ -55,31 +58,13 @@ const Pendulum = styled.div`
 `;
 
 const Metronome = () => {
-  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);
-  // User defined metronome program
-  const program = useSelector((state) => state.program);
-  const dispatch = useDispatch();
-  const [beatCount, setBeatCount] = useState(0);
-  // Iterator object extracted from the current progeam
-  const [routine, setRoutine] = useState();
-  // Stores the settings for the current program chunk
-  const [currProgramChunk, setCurrProgramChunk] = useState();
-  const ticker = useRef(
-    new Ticker({ onTick: () => setBeatCount((prev) => prev + 1) })
+  const { tempo, metre, isPlaying, beatCount } = useSelector(
+    (state) => state.metronome
   );
-
-  const initRoutine = useCallback(() => {
-    const iterator = program[Symbol.iterator]();
-    const chunk = iterator.next().value;
-    setRoutine(iterator);
-    updateChunk(chunk);
-  }, [program, dispatch]);
-
-  const updateChunk = useCallback((chunk) => {
-    dispatch(setMetre(chunk.metre));
-    dispatch(setTempo(chunk.tempo));
-    setCurrProgramChunk(chunk);
-  }, []);
+  const dispatch = useDispatch();
+  const ticker = useRef(
+    new Ticker({ onTick: () => dispatch(incrementBeatCount()) })
+  );
 
   // Listen for tempo and metre changes
   useEffect(() => {
@@ -87,28 +72,7 @@ const Metronome = () => {
     ticker.current.setMetre(metre);
   }, [tempo, metre]);
 
-  useEffect(() => {
-    if (program.length > 0) {
-      initRoutine();
-    }
-  }, [program, initRoutine]);
-
-  //Listen for end of current program chunk
-  useEffect(() => {
-    if (
-      currProgramChunk &&
-      beatCount === currProgramChunk.metre * currProgramChunk.measures
-    ) {
-      setBeatCount(0);
-      const nextChunk = routine.next().value;
-      if (nextChunk) {
-        updateChunk(nextChunk);
-      } else {
-        initRoutine();
-      }
-    }
-  }, [currProgramChunk, beatCount, initRoutine, routine, updateChunk]);
-  /*
+  /**
    * The call to setTimeout below is a temporary
    * workaround for the 1 or 2 beats that remain in
    * the buffer after the ticker stops
@@ -118,9 +82,9 @@ const Metronome = () => {
       ticker.current.init();
     } else if (ticker.current.stopPulse) {
       ticker.current.stopPulse();
-      setTimeout(() => setBeatCount(0), 1000);
+      setTimeout(() => dispatch(resetBeatCount()), 1000);
     }
-  }, [isPlaying]);
+  }, [isPlaying, dispatch]);
 
   return (
     <Wrapper>
