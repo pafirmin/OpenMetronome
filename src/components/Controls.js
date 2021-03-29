@@ -9,7 +9,7 @@ import RemoveCircleOutlineRoundedIcon from "@material-ui/icons/RemoveCircleOutli
 const Wrapper = styled.div`
   margin: 0 auto;
   text-align: center;
-  width: 500px;
+  width: 100%;
 `;
 
 const MetreControl = styled.div`

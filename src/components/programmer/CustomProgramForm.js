@@ -46,7 +46,7 @@ const CustomProgramForm = () => {
         value={formValues.measures}
         onChange={handleChange}
       />
-      <label htmlFor="measures">measures of</label>
+      <label htmlFor="measures">bars of</label>
       <label htmlFor="metre">
         <input
           type="number"

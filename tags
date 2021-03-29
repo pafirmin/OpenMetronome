@@ -80,6 +80,7 @@ expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction =
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: SET_TEMPO, payload: 80 };$/;"	O
 expectedAction	src/actions/metronomeActions.test.js	/^    const expectedAction = { type: TOGGLE_IS_PLAYING };$/;"	O
 formValues	src/components/programmer/CustomProgramForm.js	/^  const [formValues, setFormValues] = useState({$/;"	V
+getFrequency	src/helpers/Ticker.js	/^  getFrequency() {$/;"	M
 handleChange	src/components/programmer/CustomProgramForm.js	/^  const handleChange = (e) => {$/;"	F
 handleDelete	src/components/programmer/CustomProgram.js	/^  const handleDelete = (obj) => {$/;"	F
 handleSubmit	src/components/programmer/CustomProgramForm.js	/^  const handleSubmit = () => {$/;"	F
@@ -149,7 +150,7 @@ setRampFrequency	src/components/programmer/RampTempo.js	/^  const [rampFrequency
 setSliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useState(tempo);$/;"	V
 setTempo	src/actions/metronomeActions.js	/^export const setTempo = (tempo) => {$/;"	E
 setTempo	src/helpers/Ticker.js	/^  setTempo(tempo) {$/;"	M
-setTempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(10);$/;"	V
+setTempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(0);$/;"	V
 settings	src/components/programmer/CustomProgramForm.js	/^    const settings = {$/;"	O
 silent	src/components/programmer/CustomProgramForm.js	/^    silent: false,$/;"	P
 silent	src/reducers/programmerReducer.test.js	/^          silent: false,$/;"	P
@@ -158,6 +159,7 @@ sliderVal	src/components/Controls.js	/^  const [sliderVal, setSliderVal] = useSt
 startPulse	src/helpers/CowbellTicker.js	/^  startPulse() {$/;"	M
 startPulse	src/helpers/Ticker.js	/^  startPulse() {$/;"	M
 state	src/reducers/metronomeReducer.test.js	/^    const state = { isPlaying: false };$/;"	O
+stopPulse	src/helpers/Ticker.js	/^    this.stopPulse = () => {$/;"	M
 tempo	src/components/Controls.js	/^  const { tempo, metre, isPlaying } = useSelector((state) => state.metronome);$/;"	V
 tempo	src/components/Metronome.js	/^  const { tempo, metre, isPlaying, beatCount } = useSelector($/;"	V
 tempo	src/components/programmer/CustomProgramForm.js	/^    tempo: 120,$/;"	P
@@ -165,7 +167,7 @@ tempo	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount
 tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P
 tempo	src/reducers/programmerReducer.test.js	/^          tempo: 120,$/;"	P
 tempo	src/reducers/programmerReducer.test.js	/^        tempo: 120,$/;"	P
-tempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(10);$/;"	V
+tempoRamp	src/components/programmer/RampTempo.js	/^  const [tempoRamp, setTempoRamp] = useState(0);$/;"	V
 togglePlay	src/actions/metronomeActions.js	/^export const togglePlay = () => {$/;"	E
 type	src/actions/metronomeActions.js	/^    type: NEXT_PROGRAM_CHUNK,$/;"	P
 type	src/actions/metronomeActions.js	/^    type: SET_METRE,$/;"	P

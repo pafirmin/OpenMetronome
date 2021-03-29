@@ -12,6 +12,8 @@ const CustomProgram = () => {
   const beatCount = useSelector((state) => state.metronome.beatCount);
   const dispatch = useDispatch();
 
+  console.log(beatCount);
+
   const handleDelete = (obj) => {
     if (program.length === 1) {
       dispatch(clearProgram());
@@ -43,8 +45,8 @@ const CustomProgram = () => {
     <div>
       <CustomProgramForm />
       {program.map((obj) => (
-        <p key={obj.id}>
-          {obj.measures} measures of {obj.metre} at {obj.tempo}bpm{" "}
+        <p style={{ textAlign: "center" }} key={obj.id}>
+          {obj.measures} bars of {obj.metre} at {obj.tempo}bpm{" "}
           <button type="button" onClick={() => handleDelete(obj)}>
             Remove
           </button>

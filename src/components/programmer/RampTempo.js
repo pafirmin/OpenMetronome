@@ -8,16 +8,13 @@ const RampTempo = () => {
     (state) => state.metronome
   );
   const dispatch = useDispatch();
-  const [tempoRamp, setTempoRamp] = useState(10);
+  const [tempoRamp, setTempoRamp] = useState(0);
   const [rampFrequency, setRampFrequency] = useState(4);
 
   useEffect(() => {
-    if (
-      isPlaying &&
-      beatCount % (rampFrequency * metre) === 0 &&
-      tempo <= 220 - tempoRamp
-    ) {
-      dispatch(setTempo(tempo + tempoRamp));
+    if (isPlaying && beatCount % (rampFrequency * metre) === 0) {
+      console.log(tempo + tempoRamp);
+      dispatch(setTempo(Math.min(tempo + Number(tempoRamp), 220)));
     }
   }, [beatCount]);
 
@@ -26,6 +23,8 @@ const RampTempo = () => {
       <ProgramForm>
         <label htmlFor="tempo">Increase tempo by</label>
         <input
+          min={0}
+          max={50}
           type="number"
           name="tempoRamp"
           id="tempo"
@@ -34,6 +33,7 @@ const RampTempo = () => {
         />
         <span>bpm every</span>
         <input
+          min={1}
           type="number"
           name="measures"
           id="measures"

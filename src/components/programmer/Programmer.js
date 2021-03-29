@@ -18,6 +18,7 @@ const Tab = styled.span`
   position: relative;
   color: ${(props) => (props.isActive ? "#dfdfdf" : "#9d9d9d")};
   cursor: pointer;
+  transition: color 0.3s;
 
   &:after {
     content: "";
@@ -28,7 +29,6 @@ const Tab = styled.span`
     height: 2px;
     width: ${(props) => (props.isActive ? "100%" : "0")};
     background-color: red;
-
     transition: width 0.3s;
   }
 `;

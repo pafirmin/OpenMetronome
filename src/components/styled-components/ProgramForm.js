@@ -8,7 +8,10 @@ export default styled.form`
 
   & input {
     width: 3em;
-    font-size: inherit;
+    font: inherit;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 3px;
   }
 
   & > * + * {
