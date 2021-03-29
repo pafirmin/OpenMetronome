@@ -5,6 +5,7 @@ import {
   INCREMENT_BEAT_COUNT,
   RESET_BEAT_COUNT,
   NEXT_PROGRAM_CHUNK,
+  SET_NOTE_VALUE,
 } from "./types";
 
 export const setTempo = (tempo) => {
@@ -18,6 +19,13 @@ export const setMetre = (meter) => {
   return {
     type: SET_METRE,
     payload: meter,
+  };
+};
+
+export const setNoteValue = (value) => {
+  return {
+    type: SET_NOTE_VALUE,
+    payload: value,
   };
 };
 

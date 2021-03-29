@@ -10,7 +10,7 @@ import {
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 300px;
   margin: auto;
 `;
 
@@ -58,19 +58,26 @@ const Pendulum = styled.div`
 `;
 
 const Metronome = () => {
-  const { tempo, metre, isPlaying, beatCount } = useSelector(
+  const dispatch = useDispatch();
+  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector(
     (state) => state.metronome
   );
-  const dispatch = useDispatch();
   const ticker = useRef(
     new Ticker({ onTick: () => dispatch(incrementBeatCount()) })
   );
 
-  // Listen for tempo and metre changes
+  // Listen for tempo, metre and note value changes
   useEffect(() => {
     ticker.current.setTempo(tempo);
-    ticker.current.setMetre(metre);
   }, [tempo, metre]);
+
+  useEffect(() => {
+    ticker.current.setMetre(metre);
+  }, [metre]);
+
+  useEffect(() => {
+    ticker.current.setNoteValue(noteValue);
+  }, [noteValue]);
 
   /**
    * The call to setTimeout below is a temporary
@@ -88,7 +95,6 @@ const Metronome = () => {
 
   return (
     <Wrapper>
-      <p>{beatCount % metre || metre}</p>
       <TempoDisplay>{tempo}bpm</TempoDisplay>
       <Pendulum isPlaying={isPlaying} tempo={tempo} />
     </Wrapper>

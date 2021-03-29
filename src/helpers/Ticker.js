@@ -59,6 +59,10 @@ export default class Ticker extends AudioContext {
     this.metre = metre;
   }
 
+  setNoteValue(value) {
+    this.division = value;
+  }
+
   getFrequency() {
     if (this.beatCount % this.metre === 0) {
       return 550;
