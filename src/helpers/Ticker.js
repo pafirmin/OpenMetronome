@@ -60,6 +60,9 @@ export default class Ticker extends AudioContext {
   }
 
   setNoteValue(value) {
+    if (value === 1) {
+      this.beatCount = Math.ceil(this.beatCount);
+    }
     this.division = value;
   }
 

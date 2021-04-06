@@ -100,15 +100,15 @@ initialState	src/reducers/programmerReducer.js	/^const initialState = {$/;"	O
 initialState	src/reducers/programmerReducer.test.js	/^    const initialState = { program: [], currentChunk: {} };$/;"	O
 initialState	src/reducers/programmerReducer.test.js	/^    const initialState = {$/;"	O
 interval	src/helpers/Ticker.js	/^    const interval = setInterval(() => this.pulse(), 100);$/;"	F
-isPlaying	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-isPlaying	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector($/;"	V
+isPlaying	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
+isPlaying	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
 isPlaying	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 isPlaying	src/reducers/metronomeReducer.js	/^  isPlaying: false,$/;"	P
 measures	src/components/programmer/CustomProgramForm.js	/^    measures: 4,$/;"	P
 measures	src/reducers/programmerReducer.test.js	/^          measures: 4,$/;"	P
 measures	src/reducers/programmerReducer.test.js	/^        measures: 4,$/;"	P
-metre	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-metre	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector($/;"	V
+metre	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
+metre	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
 metre	src/components/programmer/CustomProgramForm.js	/^    metre: 4,$/;"	P
 metre	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 metre	src/reducers/metronomeReducer.js	/^  metre: 4,$/;"	P
@@ -120,8 +120,8 @@ metronome	src/store/store.js	/^  metronome: metronomeReducer,$/;"	P
 metronomeReducer	src/reducers/metronomeReducer.js	/^const metronomeReducer = (state = initialState, action) => {$/;"	F
 nextNote	src/helpers/CowbellTicker.js	/^  nextNote() {$/;"	M
 nextProgramChunk	src/actions/metronomeActions.js	/^export const nextProgramChunk = (obj) => {$/;"	E
-noteValue	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-noteValue	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector($/;"	V
+noteValue	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
+noteValue	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
 noteValue	src/reducers/metronomeReducer.js	/^  noteValue: 1,$/;"	P
 payload	src/actions/metronomeActions.js	/^    payload: meter,$/;"	P
 payload	src/actions/metronomeActions.js	/^    payload: obj,$/;"	P
@@ -174,8 +174,8 @@ startPulse	src/helpers/CowbellTicker.js	/^  startPulse() {$/;"	M
 startPulse	src/helpers/Ticker.js	/^  startPulse() {$/;"	M
 state	src/reducers/metronomeReducer.test.js	/^    const state = { isPlaying: false };$/;"	O
 stopPulse	src/helpers/Ticker.js	/^    this.stopPulse = () => {$/;"	M
-tempo	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector((state) => state.metronome);$/;"	V
-tempo	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector($/;"	V
+tempo	src/components/Controls.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
+tempo	src/components/Metronome.js	/^  const { tempo, metre, noteValue, isPlaying } = useSelector($/;"	V
 tempo	src/components/programmer/CustomProgramForm.js	/^    tempo: 120,$/;"	P
 tempo	src/components/programmer/RampTempo.js	/^  const { tempo, metre, beatCount, isPlaying } = useSelector($/;"	V
 tempo	src/reducers/metronomeReducer.js	/^  tempo: 120,$/;"	P

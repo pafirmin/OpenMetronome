@@ -59,7 +59,7 @@ const Pendulum = styled.div`
 
 const Metronome = () => {
   const dispatch = useDispatch();
-  const { tempo, metre, noteValue, isPlaying, beatCount } = useSelector(
+  const { tempo, metre, noteValue, isPlaying } = useSelector(
     (state) => state.metronome
   );
   const ticker = useRef(
@@ -69,7 +69,7 @@ const Metronome = () => {
   // Listen for tempo, metre and note value changes
   useEffect(() => {
     ticker.current.setTempo(tempo);
-  }, [tempo, metre]);
+  }, [tempo]);
 
   useEffect(() => {
     ticker.current.setMetre(metre);

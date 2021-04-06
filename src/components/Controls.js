@@ -12,7 +12,7 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RemoveCircleOutlineRoundedIcon from "@material-ui/icons/RemoveCircleOutlineRounded";
 
 const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 1rem auto 0 auto;
   text-align: center;
   width: 100%;
 `;
@@ -89,7 +89,13 @@ const Controls = () => {
       <StartBtn onClick={() => dispatch(togglePlay())}>
         {isPlaying ? "Stop" : "Start"}
       </StartBtn>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "1rem",
+        }}
+      >
         <div style={{ width: "150px" }}>
           <span style={{ display: "block" }}>Metre</span>
           <ControlContainer>
