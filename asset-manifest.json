@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/OpenMetronome/static/js/main.aaed0671.chunk.js",
-    "main.js.map": "/OpenMetronome/static/js/main.aaed0671.chunk.js.map",
+    "main.js": "/OpenMetronome/static/js/main.9dbcb89b.chunk.js",
+    "main.js.map": "/OpenMetronome/static/js/main.9dbcb89b.chunk.js.map",
     "runtime-main.js": "/OpenMetronome/static/js/runtime-main.ff14310a.js",
     "runtime-main.js.map": "/OpenMetronome/static/js/runtime-main.ff14310a.js.map",
-    "static/js/2.d4d3c4fd.chunk.js": "/OpenMetronome/static/js/2.d4d3c4fd.chunk.js",
-    "static/js/2.d4d3c4fd.chunk.js.map": "/OpenMetronome/static/js/2.d4d3c4fd.chunk.js.map",
+    "static/js/2.c4da0309.chunk.js": "/OpenMetronome/static/js/2.c4da0309.chunk.js",
+    "static/js/2.c4da0309.chunk.js.map": "/OpenMetronome/static/js/2.c4da0309.chunk.js.map",
     "index.html": "/OpenMetronome/index.html",
-    "static/js/2.d4d3c4fd.chunk.js.LICENSE.txt": "/OpenMetronome/static/js/2.d4d3c4fd.chunk.js.LICENSE.txt"
+    "static/js/2.c4da0309.chunk.js.LICENSE.txt": "/OpenMetronome/static/js/2.c4da0309.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ff14310a.js",
-    "static/js/2.d4d3c4fd.chunk.js",
-    "static/js/main.aaed0671.chunk.js"
+    "static/js/2.c4da0309.chunk.js",
+    "static/js/main.9dbcb89b.chunk.js"
   ]
 }
