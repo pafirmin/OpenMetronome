@@ -10,6 +10,7 @@ import {
 import Slider from "@material-ui/core/Slider";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import RemoveCircleOutlineRoundedIcon from "@material-ui/icons/RemoveCircleOutlineRounded";
+import TapTempo from "./TapTempo";
 
 const Wrapper = styled.div`
   margin: 1rem auto 0 auto;
@@ -78,8 +79,8 @@ const Controls = () => {
     <Wrapper>
       <Slider
         value={sliderVal}
-        min={50}
-        max={218}
+        min={Number(process.env.REACT_APP_MIN_TEMPO)}
+        max={Number(process.env.REACT_APP_MAX_TEMPO)}
         onChange={(_e, newVal) => setSliderVal(newVal)}
         onChangeCommitted={handleTempo}
         valueLabelDisplay="auto"
@@ -93,6 +94,7 @@ const Controls = () => {
         style={{
           display: "flex",
           justifyContent: "space-between",
+          alignItems: "center",
           marginTop: "1rem",
         }}
       >
@@ -114,6 +116,7 @@ const Controls = () => {
             />
           </ControlContainer>
         </div>
+        <TapTempo />
         <div style={{ width: "150px" }}>
           <span style={{ display: "block" }}>Note</span>
           <ControlContainer>
